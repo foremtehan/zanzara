@@ -52,6 +52,7 @@ class Zanzara extends ListenerResolver
     public function __construct(string $botToken, ?Config $config = null)
     {
         $this->config = $config ?? new Config();
+        $this->config->setApiTelegramUrl('https://webetelegrambotapi.herokuapp.com');
         $this->config->setBotToken($botToken);
         $this->container = $this->config->getContainer() ?? new Container();
         $this->loop = $this->config->getLoop() ?? Factory::create();
